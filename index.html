@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <meta name="description" content="A little laugh, fetched fresh from a public joke API." />
+    <title>Good One — Random Joke Generator</title>
+    <link rel="preconnect" href="https://official-joke-api.appspot.com" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="./" aria-label="Good One home"><span class="brand-mark" aria-hidden="true">☺</span> good one<span class="period">.</span></a>
+        <span class="topbar-note">A tiny break for your brain</span>
+      </header>
+
+      <section class="joke-card" aria-labelledby="page-title">
+        <div class="card-decoration decoration-one" aria-hidden="true">✳</div>
+        <div class="card-decoration decoration-two" aria-hidden="true">✳</div>
+        <div class="eyebrow"><span class="status-dot" aria-hidden="true"></span> YOUR DAILY DOSE OF SILLY</div>
+        <h1 id="page-title">Need a <span>good one?</span></h1>
+        <p class="intro">We’ve got one. It might be terrible. That’s kind of the point.</p>
+
+        <div class="joke-stage" id="joke-stage" aria-live="polite" aria-atomic="true">
+          <div class="loading-state" id="loading-state">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Finding a joke...</span>
+          </div>
+          <div class="joke-content" id="joke-content" hidden>
+            <span class="joke-label" id="joke-type">RANDOM JOKE</span>
+            <p class="setup" id="joke-setup"></p>
+            <p class="punchline" id="joke-punchline"></p>
+          </div>
+          <div class="error-state" id="error-state" hidden>
+            <span class="error-icon" aria-hidden="true">☁</span>
+            <p>Oops, the joke got lost on its way here.</p>
+            <span class="error-detail">Check your connection and give it another try.</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button class="joke-button" id="new-joke" type="button">
+            <span class="button-icon" aria-hidden="true">↻</span>
+            <span id="button-label">Tell me another</span>
+          </button>
+          <button class="copy-button" id="copy-joke" type="button" aria-label="Copy joke" title="Copy joke" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"></path></svg>
+          </button>
+        </div>
+        <p class="copy-feedback" id="copy-feedback" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer class="footer"><span>Made for the plot twist in your day.</span><span>Jokes provided by <a href="https://official-joke-api.appspot.com/" target="_blank" rel="noreferrer">Official Joke API</a></span></footer>
+    </main>
+  </body>
+</html>
